@@ -8,15 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F42E319C295DAA4200750B1F /* CSearchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E319B295DAA4200750B1F /* CSearchApp.swift */; };
-		F42E319E295DAA4200750B1F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42E319D295DAA4200750B1F /* ContentView.swift */; };
 		F42E31A0295DAA4200750B1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F42E319F295DAA4200750B1F /* Assets.xcassets */; };
 		F42E31A3295DAA4200750B1F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F42E31A2295DAA4200750B1F /* Preview Assets.xcassets */; };
+		F42E31AF295DB5D200750B1F /* Presentation in Frameworks */ = {isa = PBXBuildFile; productRef = F42E31AE295DB5D200750B1F /* Presentation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F42E3198295DAA4200750B1F /* c-search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "c-search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42E319B295DAA4200750B1F /* CSearchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSearchApp.swift; sourceTree = "<group>"; };
-		F42E319D295DAA4200750B1F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F42E319F295DAA4200750B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F42E31A2295DAA4200750B1F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -26,6 +25,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42E31AF295DB5D200750B1F /* Presentation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +37,7 @@
 			children = (
 				F42E319A295DAA4200750B1F /* c-search */,
 				F42E3199295DAA4200750B1F /* Products */,
+				F42E31AD295DB5D200750B1F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				F42E319B295DAA4200750B1F /* CSearchApp.swift */,
-				F42E319D295DAA4200750B1F /* ContentView.swift */,
 				F42E319F295DAA4200750B1F /* Assets.xcassets */,
 				F42E31A1295DAA4200750B1F /* Preview Content */,
 			);
@@ -65,6 +65,13 @@
 				F42E31A2295DAA4200750B1F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F42E31AD295DB5D200750B1F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +90,9 @@
 			dependencies = (
 			);
 			name = "c-search";
+			packageProductDependencies = (
+				F42E31AE295DB5D200750B1F /* Presentation */,
+			);
 			productName = "c-search";
 			productReference = F42E3198295DAA4200750B1F /* c-search.app */;
 			productType = "com.apple.product-type.application";
@@ -137,7 +147,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F42E319E295DAA4200750B1F /* ContentView.swift in Sources */,
 				F42E319C295DAA4200750B1F /* CSearchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +348,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F42E31AE295DB5D200750B1F /* Presentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Presentation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F42E3190295DAA4100750B1F /* Project object */;
 }

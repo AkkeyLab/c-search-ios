@@ -1,14 +1,16 @@
 //
-//  ContentView.swift
-//  c-search
+//  SearchView.swift
+//  
 //
 //  Created by AkkeyLab on 2022/12/29.
 //
 
-import SwiftUI
+@_exported import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
+public struct SearchView: View {
+    public init() {}
+
+    public var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
@@ -19,8 +21,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentViewPreviews: PreviewProvider {
+private struct SearchViewPreviews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SearchView()
     }
 }
