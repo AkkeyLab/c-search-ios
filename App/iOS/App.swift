@@ -1,5 +1,5 @@
 //
-//  CSearchApp.swift
+//  App.swift
 //  c-search
 //
 //  Created by AkkeyLab on 2022/12/29.
