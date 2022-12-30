@@ -14,8 +14,8 @@ flowchart TB
   subgraph Project
     App<-->A
     subgraph Package
-      A[Presentation Package]<-->B[Domain Package]
-      B<-->C[Data Package]
+      A[Presentation Module]<-->B[Domain Module]
+      B<-->C[Data Module]
     end
   end
   subgraph Third Party
