@@ -30,7 +30,7 @@ let package = Package(
     targets: [
         .target(
             name: "Presentation",
-            dependencies: []),
+            dependencies: ["Domain"]),
         .target(
             name: "Domain",
             dependencies: ["Data", "APIKit", "ArkanaKeys"]),

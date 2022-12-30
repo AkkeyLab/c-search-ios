@@ -7,7 +7,7 @@
 
 import Data
 
-public struct Corporation {
+public final class Corporation {
     public let corporateNumber: String
     public let name: String
     public let prefectureName: String
@@ -26,3 +26,5 @@ public struct Corporation {
         furigana = entity.furigana
     }
 }
+
+extension Corporation: Identifiable {}

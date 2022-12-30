@@ -8,16 +8,20 @@
 @_exported import SwiftUI
 
 public struct SearchView: View {
+    @ObservedObject var presenter = SearchPresenter() // TODO: DI
+
     public init() {}
 
     public var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        List {
+            ForEach(presenter.corporations) {
+                Text($0.name)
+            }
         }
         .padding()
+        .onAppear {
+            presenter.searchCorporate(name: "AkkeyLab")
+        }
     }
 }
 

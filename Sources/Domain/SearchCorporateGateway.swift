@@ -8,6 +8,7 @@
 import APIKit
 import ArkanaKeys
 import Data
+import Foundation
 
 public protocol SearchCorporateGatewayProtocol {
     func search(name: String) async throws -> CorporationsEntity
@@ -18,6 +19,11 @@ public final class SearchCorporateGateway: SearchCorporateGatewayProtocol {
 
     public init(sessionAdapter: SessionAdapter) {
         self.sessionAdapter = sessionAdapter
+    }
+
+    public init() {
+        let configuration = URLSessionConfiguration.default
+        sessionAdapter = URLSessionAdapter(configuration: configuration)
     }
 
     public func search(name: String) async throws -> CorporationsEntity {

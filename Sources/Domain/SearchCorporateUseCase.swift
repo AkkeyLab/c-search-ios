@@ -12,7 +12,7 @@ public protocol SearchCorporateUseCaseProtocol {
 public final class SearchCorporateUseCase: SearchCorporateUseCaseProtocol {
     private let gateway: SearchCorporateGatewayProtocol
 
-    public init(gateway: SearchCorporateGatewayProtocol) {
+    public init(gateway: SearchCorporateGatewayProtocol = SearchCorporateGateway()) {
         self.gateway = gateway
     }
 
