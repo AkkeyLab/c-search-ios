@@ -13,6 +13,9 @@ let package = Package(
             name: "Presentation",
             targets: ["Presentation"]),
         .library(
+            name: "Domain",
+            targets: ["Domain"]),
+        .library(
             name: "Data",
             targets: ["Data"]),
         .library(
@@ -27,7 +30,10 @@ let package = Package(
     targets: [
         .target(
             name: "Presentation",
-            dependencies: ["ArkanaKeys"]),
+            dependencies: []),
+        .target(
+            name: "Domain",
+            dependencies: ["Data", "APIKit", "ArkanaKeys"]),
         .target(
             name: "Data",
             dependencies: ["APIKit", "XMLCoder", "Extension"]),
