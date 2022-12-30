@@ -5,6 +5,8 @@
 //  Created by AkkeyLab on 2022/12/30.
 //
 
+import Foundation
+
 // https://www.houjin-bangou.nta.go.jp/documents/k-web-api-kinou-gaiyo.pdf#page=40
 struct Corporations: Codable {
     let lastUpdateDate: Date
@@ -15,7 +17,7 @@ struct Corporations: Codable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.lastUpdateDate = try container.decodeDate(forKey: .lastUpdateDate)
+        self.lastUpdateDate = try container.decodeDate(template: .yyyy_MM_dd, forKey: .lastUpdateDate)
         self.count = try container.decode(Int.self, forKey: .count)
         self.divideNumber = try container.decode(Int.self, forKey: .divideNumber)
         self.divideSize = try container.decode(Int.self, forKey: .divideSize)
@@ -61,8 +63,8 @@ struct Corporation: Codable {
         self.corporateNumber = try container.decode(String.self, forKey: .corporateNumber)
         self.process = try container.decode(String.self, forKey: .process)
         self.correct = try container.decodeIfPresent(String.self, forKey: .correct)
-        self.updateDate = try container.decodeDate(forKey: .updateDate)
-        self.changeDate = try container.decodeDate(forKey: .changeDate)
+        self.updateDate = try container.decodeDate(template: .yyyy_MM_dd, forKey: .updateDate)
+        self.changeDate = try container.decodeDate(template: .yyyy_MM_dd, forKey: .changeDate)
         self.name = try container.decode(String.self, forKey: .name)
         self.nameImageId = try container.decodeIfPresent(String.self, forKey: .nameImageId)
         self.kind = try container.decode(String.self, forKey: .kind)
@@ -75,11 +77,11 @@ struct Corporation: Codable {
         self.postCode = try container.decode(String.self, forKey: .postCode)
         self.addressOutside = try container.decodeIfPresent(String.self, forKey: .addressOutside)
         self.addressOutsideImageId = try container.decodeIfPresent(String.self, forKey: .addressOutsideImageId)
-        self.closeDate = try container.decodeDateIfPresent(forKey: .closeDate)
+        self.closeDate = try container.decodeDateIfPresent(template: .yyyy_MM_dd, forKey: .closeDate)
         self.closeCause = try container.decodeIfPresent(String.self, forKey: .closeCause)
         self.successorCorporateNumber = try container.decodeIfPresent(String.self, forKey: .successorCorporateNumber)
         self.changeCause = try container.decodeIfPresent(String.self, forKey: .changeCause)
-        self.assignmentDate = try container.decodeDate(forKey: .assignmentDate)
+        self.assignmentDate = try container.decodeDate(template: .yyyy_MM_dd, forKey: .assignmentDate)
         self.latest = try container.decode(String.self, forKey: .latest)
         self.enName = try container.decodeIfPresent(String.self, forKey: .enName)
         self.enPrefectureName = try container.decodeIfPresent(String.self, forKey: .enPrefectureName)
