@@ -1,0 +1,4 @@
+result_path: 'dependencies'
+global_secrets:
+  - NationalTaxAgencyApiKey
+

@@ -22,11 +22,12 @@ let package = Package(
     dependencies: [
          .package(url: "https://github.com/ishkawa/APIKit", from: "5.4.0"),
          .package(url: "https://github.com/CoreOffice/XMLCoder", from: "0.15.0"),
+         .package(path: "ArkanaKeys"),
     ],
     targets: [
         .target(
             name: "Presentation",
-            dependencies: []),
+            dependencies: ["ArkanaKeys"]),
         .target(
             name: "Data",
             dependencies: ["APIKit", "XMLCoder", "Extension"]),

@@ -25,3 +25,10 @@ flowchart TB
     C<-->G[Packages]
   end
 ```
+
+## Setup
+```sh
+bundle install
+echo 'NationalTaxAgencyApiKey=XXXXXXXXXXXXX' >>.env
+bundle exec arkana -c .arkana.yml -e .env
+```
