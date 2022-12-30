@@ -28,10 +28,10 @@ struct CorporateRequest: Request {
         [
             "id": apiKey,
             "name": name,
-            "type": "12",
-            "mode": "2",
-            "kind": "03",
-            "close": "0"
+            "type": type.rawValue,
+            "mode": mode.rawValue,
+            "kind": kind.rawValue,
+            "close": hasClosed ? 1 : Int.zero
         ]
     }
 
@@ -41,11 +41,10 @@ struct CorporateRequest: Request {
 
     private let apiKey: String
     private let name: String
-
-    init(apiKey: String, name: String) {
-        self.apiKey = apiKey
-        self.name = name
-    }
+    private let type: CorporateResponseType
+    private let mode: CorporateSearchMode
+    private let kind: CorporateKind
+    private let hasClosed: Bool
 
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
         guard let response = object as? Response else {
