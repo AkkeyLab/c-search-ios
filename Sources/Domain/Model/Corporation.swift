@@ -7,7 +7,8 @@
 
 import Data
 
-public final class Corporation {
+public struct Corporation {
+    public let id: Int
     public let corporateNumber: String
     public let name: String
     public let prefectureName: String
@@ -16,7 +17,8 @@ public final class Corporation {
     public let postCode: String
     public let furigana: String?
 
-    init(entity: CorporationEntity) {
+    init(id: Int, entity: CorporationEntity) {
+        self.id = id
         corporateNumber = entity.corporateNumber
         name = entity.name
         prefectureName = entity.prefectureName
@@ -28,3 +30,4 @@ public final class Corporation {
 }
 
 extension Corporation: Identifiable {}
+extension Corporation: Hashable {}

@@ -19,7 +19,7 @@ public final class SearchCorporateUseCase: SearchCorporateUseCaseProtocol {
     public func search(name: String) async throws -> [Corporation] {
         do {
             let result = try await gateway.search(name: name)
-            return result.corporation.map(Corporation.init)
+            return result.corporation.enumerated().map(Corporation.init)
         } catch {
             throw error
         }

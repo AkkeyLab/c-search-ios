@@ -6,19 +6,26 @@
 //
 
 @_exported import SwiftUI
+import Domain
 
 public struct SearchView: View {
     @ObservedObject var presenter = SearchPresenter() // TODO: DI
+    @State var selectedCorporation: Corporation?
 
     public init() {}
 
     public var body: some View {
-        List {
-            ForEach(presenter.corporations) {
-                Text($0.name)
+        NavigationSplitView {
+            List(presenter.corporations, id: \.id, selection: $selectedCorporation) { corporation in
+                NavigationLink(corporation.name, value: corporation)
+            }
+        } detail: {
+            if let corporation = selectedCorporation {
+                Text(corporation.name)
+            } else {
+                Text("Empty")
             }
         }
-        .padding()
         .onAppear {
             presenter.searchCorporate(name: "AkkeyLab")
         }
