@@ -67,7 +67,7 @@ playground.xcworkspace
 Carthage/Build/
 
 # Accio dependency management
-Dependencies/
+# Dependencies/
 .accio/
 
 # fastlane
@@ -88,3 +88,8 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# ArkanaKeys
+dependencies/ArkanaKeys/*
+dependencies/ArkanaKeysInterfaces/*
+.env

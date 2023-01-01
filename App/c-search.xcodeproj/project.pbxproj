@@ -17,6 +17,7 @@
 		F42E319B295DAA4200750B1F /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F42E319F295DAA4200750B1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F4A59E9B295DCC2A006DA334 /* c-search-ios */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "c-search-ios"; path = ..; sourceTree = "<group>"; };
+		F4A59EA3295F0568006DA334 /* ArkanaKeys */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ArkanaKeys; path = ../dependencies/ArkanaKeys; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +35,7 @@
 		F42E318F295DAA4100750B1F = {
 			isa = PBXGroup;
 			children = (
+				F4A59EA3295F0568006DA334 /* ArkanaKeys */,
 				F4A59E9B295DCC2A006DA334 /* c-search-ios */,
 				F42E319A295DAA4200750B1F /* iOS */,
 				F42E3199295DAA4200750B1F /* Products */,
