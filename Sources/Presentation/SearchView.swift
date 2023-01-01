@@ -23,18 +23,19 @@ public struct SearchView<Presenter: SearchPresenterProtocol>: View {
             List(presenter.corporations, id: \.id, selection: $selectedCorporation) { corporation in
                 NavigationLink(corporation.name, value: corporation)
             }
+            .navigationTitle("Corporations")
+            .searchable(
+                text: $searchText,
+                placement: .navigationBarDrawer(displayMode: .always),
+                prompt: Text("Enter corporate name")
+            )
+            .onSubmit(of: .search) {
+                presenter.searchCorporate(name: searchText)
+            }
         } detail: {
             if let corporation = selectedCorporation {
                 Text(corporation.name)
             }
-        }
-        .searchable(
-            text: $searchText,
-            placement: .navigationBarDrawer(displayMode: .always),
-            prompt: Text("Enter corporate name")
-        )
-        .onSubmit(of: .search) {
-            presenter.searchCorporate(name: searchText)
         }
     }
 }
