@@ -1,5 +1,5 @@
 //
-//  Appliable+.swift
+//  Appliable+NSObject.swift
 //  
 //
 //  Created by AkkeyLab on 2022/12/30.
