@@ -7,16 +7,22 @@
 
 import Domain
 
-final class SearchPresenter: ObservableObject {
-    @Published var corporations: [Corporation] = []
+public protocol SearchPresenterProtocol: ObservableObject {
+    var corporations: [Corporation] { get set }
+
+    func searchCorporate(name: String)
+}
+
+final public class SearchPresenter: SearchPresenterProtocol {
+    @Published public var corporations: [Corporation] = []
 
     private let useCase: SearchCorporateUseCaseProtocol
 
-    init(useCase: SearchCorporateUseCaseProtocol = SearchCorporateUseCase()) {
+    public init(useCase: SearchCorporateUseCaseProtocol = SearchCorporateUseCase()) {
         self.useCase = useCase
     }
 
-    func searchCorporate(name: String) {
+    public func searchCorporate(name: String) {
         Task.detached { [weak self] in
             guard let self = self else { return }
 

@@ -8,11 +8,14 @@
 @_exported import SwiftUI
 import Domain
 
-public struct SearchView: View {
-    @ObservedObject var presenter = SearchPresenter() // TODO: DI
-    @State var selectedCorporation: Corporation?
+public struct SearchView<Presenter: SearchPresenterProtocol>: View {
+    @StateObject private var presenter: Presenter
+    @State private var selectedCorporation: Corporation?
 
-    public init() {}
+    public init(presenter: Presenter = SearchPresenter()) {
+        // https://docs.swift.org/swift-book/LanguageGuide/Properties.html
+        _presenter = StateObject(wrappedValue: presenter)
+    }
 
     public var body: some View {
         NavigationSplitView {
