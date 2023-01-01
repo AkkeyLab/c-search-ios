@@ -11,6 +11,7 @@ import Domain
 public struct SearchView<Presenter: SearchPresenterProtocol>: View {
     @StateObject private var presenter: Presenter
     @State private var selectedCorporation: Corporation?
+    @State private var searchText: String = ""
 
     public init(presenter: Presenter = SearchPresenter()) {
         // https://docs.swift.org/swift-book/LanguageGuide/Properties.html
@@ -25,12 +26,15 @@ public struct SearchView<Presenter: SearchPresenterProtocol>: View {
         } detail: {
             if let corporation = selectedCorporation {
                 Text(corporation.name)
-            } else {
-                Text("Empty")
             }
         }
-        .onAppear {
-            presenter.searchCorporate(name: "AkkeyLab")
+        .searchable(
+            text: $searchText,
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: Text("Enter corporate name")
+        )
+        .onSubmit(of: .search) {
+            presenter.searchCorporate(name: searchText)
         }
     }
 }
