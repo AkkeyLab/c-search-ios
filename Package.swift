@@ -42,7 +42,7 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "DomainTests",
-            dependencies: ["Domain", "APIKit"]),
+            dependencies: ["Domain", "Data", "XMLCoder", "APIKit"]),
         .testTarget(
             name: "DataTests",
             dependencies: ["Data", "APIKit"]),
