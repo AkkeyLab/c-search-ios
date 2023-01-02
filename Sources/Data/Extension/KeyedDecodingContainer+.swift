@@ -26,6 +26,16 @@ extension KeyedDecodingContainer {
         return try date(template: template, forKey: forKey, dateString: string)
     }
 
+    /// By using this function, empty string is treated as nil
+    func decodeStringIfPresent(forKey: KeyedDecodingContainer.Key) throws -> String? {
+        guard let string = try decodeIfPresent(String.self, forKey: forKey),
+              !string.isEmpty else {
+            return nil
+        }
+
+        return string
+    }
+
     private func date(template: DateTemplate, forKey: KeyedDecodingContainer.Key, dateString: String) throws -> Date {
         let calendar = Calendar(identifier: .gregorian)
         let formatter = DateFormatter().apply {

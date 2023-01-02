@@ -41,7 +41,7 @@ let package = Package(
             name: "Extension",
             dependencies: []),
         .testTarget(
-            name: "PresentationTests",
-            dependencies: ["Presentation"]),
+            name: "MainTests",
+            dependencies: ["Presentation", "Domain", "Data", "XMLCoder", "APIKit"]),
     ]
 )
