@@ -20,7 +20,7 @@ final class CorporateRequestTests: XCTestCase {
     }
 
     func testRecentlyEstablishedCompany() async throws {
-        adapter.data = try XCTUnwrap(CorporationsEntity.data)
+        adapter.data = try XCTUnwrap(CorporationsEntity.mockData)
 
         let request = CorporateRequest(
             apiKey: "",
